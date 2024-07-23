@@ -1,7 +1,7 @@
 datawarehouse:
-  target: prod
+  target: dev
   outputs:
-    prod:
+    dev:
       type: postgres
       host: "{{ env_var('DB_HOST_PROD') }}"
       user: "{{ env_var('DB_USER_PROD') }}"
