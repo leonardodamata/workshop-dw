@@ -52,7 +52,7 @@ except Exception as e:
 commodities = ['CL=F', 'GC=F', 'SI=F']
 
 def buscar_dados_commodities(simbolo, periodo='5d', intervalo='1d'):
-    ticker = yf.Ticker('CL=F')
+    ticker = yf.Ticker(simbolo)
     dados = ticker.history(period = periodo, interval = intervalo)[['Close']]
     dados['simbolo'] = simbolo
     return dados
@@ -70,6 +70,7 @@ def salvar_no_postgres(df, schema='public'):
     
 if __name__ == "__main__"  :
     dados_concatenados = buscar_todos_dados_commodities(commodities)
+    print(dados_concatenados)
     salvar_no_postgres(dados_concatenados, schema='public')
 # pegar a cotação do meus ativos
 
