@@ -1,3 +1,5 @@
+-- models/datamart/dm_commodities.sql
+
 with commodities as (
     select
         data,

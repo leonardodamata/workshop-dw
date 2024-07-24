@@ -34,7 +34,7 @@ def get_data():
         valor,
         ganho
     FROM
-        public.dm_commodities;
+        public_datamart.dm_commodities;
     """
     try:
         df = pd.read_sql(query, engine)
